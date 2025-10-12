@@ -1,11 +1,24 @@
-<script setup></script>
-
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <show-panels></show-panels>
 </template>
 
-<style scoped></style>
+<script>
+import ShowPanels from './pages/ShowPanels.vue'
+
+export default {
+  components: {
+    ShowPanels,
+  },
+}
+</script>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #645047;
+}
+</style>
