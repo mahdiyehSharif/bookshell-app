@@ -1,12 +1,26 @@
 <template>
   <section class="container">
     <div class="welcome">
-      <h3 class="welcome-user">Welcome back, mahdiyeh!</h3>
+      <h3>Welcome back, mahdiyeh!</h3>
       <span>Explore books in your favorite domain and build your collection.</span>
     </div>
   </section>
-  <section class="container"></section>
+  <section class="container">
+    <select-writers></select-writers>
+  </section>
+  <section>
+    <slot></slot>
+  </section>
 </template>
+
+<script>
+import SelectWriters from './SelectWriters.vue'
+
+export default {
+  components: { SelectWriters },
+}
+</script>
+
 <style>
 .container {
   border-top: #8a7265;
@@ -24,7 +38,7 @@
   padding: 1rem;
 }
 
-.welcome-user {
+.welcome h3 {
   color: #645047;
 }
 </style>
