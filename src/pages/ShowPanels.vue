@@ -20,7 +20,7 @@ import ShellPanel from '@/components/shell/ShellPanel.vue'
 export default {
   data() {
     return {
-      selectedTab: '',
+      selectedTab: 'home-panel',
     }
   },
   components: {

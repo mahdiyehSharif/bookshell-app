@@ -18,9 +18,12 @@ export default {
   emits: ['activate-home', 'activate-search', 'activate-shell'],
 }
 </script>
-<style>
+
+<style scoped>
 header {
   background-color: #fdf3ea;
+  border-bottom: 1px solid #ccb9ac;
+  padding-bottom: 1rem;
 }
 
 .container {
@@ -36,14 +39,20 @@ header {
 }
 
 .button {
-  border: 1px solid #776254;
+  border: 1px solid #d7c4b5;
   border-radius: 1rem;
-  padding: 8px 1rem;
+  padding: 0.5rem 1.5rem;
   cursor: pointer;
 }
 
+.button:hover {
+  background-color: #88766d;
+  color: #fdf3ea;
+  font-size: large;
+}
+
 .panel-holder {
-  border: 1px solid #776254;
+  border-radius: 1rem;
   background-color: #e7d5c5;
   width: 50%;
   height: 3rem;
@@ -57,5 +66,12 @@ header {
   border-radius: 12px;
   color: #645047;
   cursor: pointer;
+}
+
+.panel:hover {
+  background-color: #fdf3ea;
+  border-radius: 12px;
+  width: 33%;
+  height: 2.5rem;
 }
 </style>
