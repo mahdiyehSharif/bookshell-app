@@ -1,37 +1,32 @@
 <template>
-  <select class="writers" name="writers" id="writers">
+  <select :value="modelValue" @change="updateValue" class="writers" name="writers" id="writers">
     <option>All Writers</option>
-    <option value="mahmoud" @click="$emit('sel-mahmoud')">احمد محمود</option>
-    <option value="hedayat" @click="$emit('sel-hedayat')">صادق هدایت</option>
-    <option value="choobak" @click="$emit('sel-choobak')">صادق چوبک</option>
-    <option value="barahani" @click="$emit('sel-barahani')">رضا براهنی</option>
-    <option value="dostoevsky" @click="$emit('sel-dostoevsky')">فئودور داستایوفسکی</option>
-    <option value="tolstoy" @click="$emit('sel-tolstoy')">لئوتولستوی</option>
-    <option value="daneshvar" @click="$emit('sel-daneshvar')">سیمین دانشور</option>
-    <option value="backet" @click="$emit('sel-backet')">ساموئل بکت</option>
-    <option value="austen" @click="$emit('sel-austen')">جین آستین</option>
+    <option value="mahmoud">احمد محمود</option>
+    <option value="hedayat">صادق هدایت</option>
+    <option value="choobak">صادق چوبک</option>
+    <option value="barahani">رضا براهنی</option>
+    <option value="dostoevsky">فئودور داستایوفسکی</option>
+    <option value="tolstoy">لئوتولستوی</option>
+    <option value="daneshvar">سیمین دانشور</option>
+    <option value="backet">ساموئل بکت</option>
+    <option value="austen">جین آستین</option>
   </select>
 </template>
 
 <script>
 export default {
-  emits: [
-    'sel-mahmoud',
-    'sel-hedayat',
-    'sel-choobak',
-    'sel-barahani',
-    'sel-dostoevsky',
-    'sel-tolstoy',
-    'sel-daneshvar',
-    'sel-backet',
-    'sel-austen',
-  ],
+  props: ['modelValue'],
+  methods: {
+    updateValue(event) {
+      this.$emit('update:modelValue', event.target.value)
+    },
+  },
 }
 </script>
 
 <style>
 .writers {
-  width: 70%;
+  width: 80%;
   border: none;
   border-radius: 1rem;
   background-color: #f1e6d9;

@@ -6,18 +6,24 @@
     </div>
   </section>
   <section class="container">
-    <select-writers></select-writers>
+    <select-writers v-model="selectedWriter"></select-writers>
   </section>
-  <section>
-    <slot></slot>
+  <section class="container">
+    <book-list></book-list>
   </section>
 </template>
 
 <script>
 import SelectWriters from './SelectWriters.vue'
+import BookList from './BookList.vue'
 
 export default {
-  components: { SelectWriters },
+  data() {
+    return {
+      selectedWriter: null,
+    }
+  },
+  components: { SelectWriters, BookList },
 }
 </script>
 
@@ -34,7 +40,7 @@ export default {
   border: 1px solid #ccb9ac;
   border-radius: 1rem;
   background-color: #f2ebd9;
-  width: 70%;
+  width: 80%;
   padding: 1rem;
 }
 
