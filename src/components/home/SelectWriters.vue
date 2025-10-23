@@ -26,10 +26,11 @@ export default {
 
 <style>
 .writers {
-  width: 80%;
+  width: 40%;
   border: none;
   border-radius: 1rem;
-  background-color: #f1e6d9;
+  background-color: #f1e2d4;
+  color: #b58a68;
   padding: 8px;
 }
 

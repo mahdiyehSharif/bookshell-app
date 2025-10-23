@@ -1,9 +1,6 @@
 <template>
   <section class="container">
-    <div class="welcome">
-      <h3>Welcome back, mahdiyeh!</h3>
-      <span>Explore books in your favorite domain and build your collection.</span>
-    </div>
+    <input class="search" type="text" placeholder="Search by title, writer, or domain..." />
   </section>
   <section class="container">
     <select-writers v-model="selectedWriter"></select-writers>
@@ -14,8 +11,8 @@
 </template>
 
 <script>
-import SelectWriters from './SelectWriters.vue'
-import BookList from './BookList.vue'
+import SelectWriters from '../home/SelectWriters.vue'
+import BookList from '../home/BookList.vue'
 
 export default {
   data() {
@@ -24,10 +21,15 @@ export default {
     }
   },
   components: { SelectWriters, BookList },
-  // watch: {
-  //   selectedWriter(val) {
-
-  //   }
-  // },
 }
 </script>
+<style>
+.search {
+  width: 40%;
+  border: none;
+  border-radius: 1rem;
+  background-color: #f1e2d4;
+  color: #cfb4a3;
+  padding: 1rem;
+}
+</style>
