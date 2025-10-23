@@ -1,15 +1,15 @@
 <template>
   <select :value="modelValue" @change="updateValue" class="writers" name="writers" id="writers">
     <option>All Writers</option>
-    <option value="mahmoud">احمد محمود</option>
-    <option value="hedayat">صادق هدایت</option>
-    <option value="choobak">صادق چوبک</option>
-    <option value="barahani">رضا براهنی</option>
-    <option value="dostoevsky">فئودور داستایوفسکی</option>
-    <option value="tolstoy">لئوتولستوی</option>
-    <option value="daneshvar">سیمین دانشور</option>
-    <option value="backet">ساموئل بکت</option>
-    <option value="austen">جین آستین</option>
+    <option value="w1">احمد محمود</option>
+    <option value="w2">صادق هدایت</option>
+    <option value="w3">صادق چوبک</option>
+    <option value="w4">رضا براهنی</option>
+    <option value="w5">فئودور داستایوفسکی</option>
+    <option value="w6">لئوتولستوی</option>
+    <option value="w7">سیمین دانشور</option>
+    <option value="w8">ساموئل بکت</option>
+    <option value="w9">جین آستین</option>
   </select>
 </template>
 

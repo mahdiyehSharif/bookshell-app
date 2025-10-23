@@ -6,24 +6,20 @@
     </div>
   </section>
   <section class="container">
-    <select-writers v-model="selectedWriter"></select-writers>
-  </section>
-  <section class="container">
-    <book-list></book-list>
+    <book-list :selected-writer="selectedWriter"></book-list>
   </section>
 </template>
 
 <script>
-import SelectWriters from './SelectWriters.vue'
 import BookList from './BookList.vue'
 
 export default {
   data() {
     return {
-      selectedWriter: null,
+      selectedWriter: '',
     }
   },
-  components: { SelectWriters, BookList },
+  components: { BookList },
 }
 </script>
 

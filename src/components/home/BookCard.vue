@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  props: ['selectedwriter', 'book'],
+  props: ['book'],
   computed: {
     bookGener() {
       return this.book.geners
@@ -62,10 +62,10 @@ export default {
   border-radius: 1rem;
   background-color: #f4e8df;
 }
-
+/* 
 .name {
 }
 
 .writer-name {
-}
+} */
 </style>
