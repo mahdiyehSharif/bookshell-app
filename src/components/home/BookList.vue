@@ -7,19 +7,29 @@
 import BookCard from './BookCard.vue'
 import { useBookStore } from '@/store/books/books'
 export default {
-  props: ['selected-writer'],
+  props: ['writerId'],
   data() {
     return {
-      books: useBookStore().allBooks,
+      books: [],
     }
   },
   components: {
     BookCard,
   },
   methods: {
-    selectWriter() {
-      this.books.filter((book) => book.writer === this.selectWriter)
+    setBooksList() {
+      this.books = useBookStore().allBooks
     },
+  },
+  watch: {
+    writerId(id) {
+      let updatedList = this.books.filter((book) => book.id === id)
+      this.books = updatedList
+    },
+  },
+  created() {
+    console.log('mounted')
+    this.setBooksList()
   },
 }
 </script>

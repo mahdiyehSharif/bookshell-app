@@ -1,13 +1,19 @@
 <template>
-  <section class="container">
-    <input class="search" type="text" placeholder="Search by title, writer, or domain..." />
-  </section>
-  <section class="container">
-    <select-writers v-model="selectedWriter"></select-writers>
-  </section>
-  <section class="container">
-    <book-list :selected-writer="selectedWriter"></book-list>
-  </section>
+  <header class="header">
+    <h2>Search Our Library</h2>
+    <p>Find books by title, writer or gener</p>
+  </header>
+  <main>
+    <section class="container">
+      <input class="search" type="text" placeholder="Search by title, writer, or gener..." />
+    </section>
+    <section class="container">
+      <select-writers v-model="id"></select-writers>
+    </section>
+    <section class="container">
+      <book-list :writer-id="id"></book-list>
+    </section>
+  </main>
 </template>
 
 <script>
@@ -17,13 +23,22 @@ import BookList from '../home/BookList.vue'
 export default {
   data() {
     return {
-      selectedWriter: '',
+      id: null,
     }
   },
   components: { SelectWriters, BookList },
 }
 </script>
-<style>
+<style scoped>
+.header {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.header h2 {
+  color: #4c3329;
+}
+
 .search {
   width: 40%;
   border: none;
