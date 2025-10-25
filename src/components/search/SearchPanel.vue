@@ -5,13 +5,18 @@
   </header>
   <main>
     <section class="container">
-      <input class="search" type="text" placeholder="Search by title, writer, or gener..." />
+      <input
+        class="search"
+        v-model="searchInput"
+        type="text"
+        placeholder="Search by title, writer, or gener..."
+      />
     </section>
     <section class="container">
       <select-writers v-model="id"></select-writers>
     </section>
     <section class="container">
-      <book-list :writer-id="id"></book-list>
+      <book-list :writer-id="id" :search-input="searchInput"></book-list>
     </section>
   </main>
 </template>
@@ -24,6 +29,7 @@ export default {
   data() {
     return {
       id: null,
+      searchInput: '',
     }
   },
   components: { SelectWriters, BookList },
@@ -46,5 +52,6 @@ export default {
   background-color: #f1e2d4;
   color: #cfb4a3;
   padding: 1rem;
+  outline: none;
 }
 </style>
