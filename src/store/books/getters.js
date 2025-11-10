@@ -1,15 +1,18 @@
 export default {
   allBooks: (state) => state.books,
-  getBookById: (state) => (bookId) => {
-    return state.books.find((book) => book.id === bookId)
+  getBookById: (state) => {
+    return state.books.map((book) => book.id)
   },
-  getBookByWriter: (state) => (writer) => {
-    return state.books.filter((book) => book.writer === writer)
+  getBookByName: (state) => {
+    return state.books.map((book) => book.name)
   },
-  getBookByName: (state) => (bookName) => {
-    return state.books.filter((book) => book.name === bookName)
+  getBookByWriter: (state) => {
+    return state.books.map((book) => book.writer)
+  },
+  getGenrs: (state) => {
+    return state.books.map((book) => book.genrs.map((g) => g))
   },
   getBookByRate: (state) => (rate) => {
-    return state.books.filter((book) => book.rate === rate)
+    return state.books.map((book) => book.rate === rate)
   },
 }

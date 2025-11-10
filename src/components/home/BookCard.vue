@@ -4,8 +4,8 @@
       <img :src="book.photo" alt="icon" />
       <span class="like"></span>
     </div>
-    <div class="geners">
-      <span v-for="gener in bookGener" :key="gener">{{ gener }}</span>
+    <div class="genrs">
+      <span v-for="genr in bookGenr" :key="genr">{{ genr }}</span>
     </div>
     <h2 class="name">{{ bookName }}</h2>
     <p class="writer-name">{{ writerName }}</p>
@@ -20,8 +20,8 @@
 export default {
   props: ['book'],
   computed: {
-    bookGener() {
-      return this.book.geners
+    bookGenr() {
+      return this.book.genrs
     },
     writerName() {
       return this.book.writer
@@ -45,10 +45,10 @@ export default {
   border: 1px solid #d4c0b3;
   border-radius: 1rem;
 }
-.geners {
+.genrs {
   margin-top: 2rem;
 }
-.geners span {
+.genrs span {
   border: 1px solid #e1e3ed;
   border-radius: 1rem;
   background-color: #e7e7ed;

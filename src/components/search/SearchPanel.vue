@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <h2>Search Our Library</h2>
-    <p>Find books by title, writer or gener</p>
+    <p>Find books by title, writer or genr</p>
   </header>
   <main>
     <section class="container">
@@ -16,14 +16,18 @@
       <select-writers v-model="id"></select-writers>
     </section>
     <section class="container">
-      <book-list :writer-id="id" :search-input="searchInput"></book-list>
+      <search-list :writer-id="id" :search-input="searchInput"></search-list>
     </section>
+    <!-- <section class="container">
+      <book-list :writer-id="id" :search-input="searchInput"></book-list>
+    </section> -->
   </main>
 </template>
 
 <script>
 import SelectWriters from '../home/SelectWriters.vue'
-import BookList from '../home/BookList.vue'
+// import BookList from '../home/BookList.vue'
+import SearchList from './SearchList.vue'
 
 export default {
   data() {
@@ -32,7 +36,7 @@ export default {
       searchInput: '',
     }
   },
-  components: { SelectWriters, BookList },
+  components: { SelectWriters, SearchList },
 }
 </script>
 <style scoped>
