@@ -18,15 +18,11 @@
     <section class="container">
       <search-list :writer-id="id" :search-input="searchInput"></search-list>
     </section>
-    <!-- <section class="container">
-      <book-list :writer-id="id" :search-input="searchInput"></book-list>
-    </section> -->
   </main>
 </template>
 
 <script>
 import SelectWriters from '../home/SelectWriters.vue'
-// import BookList from '../home/BookList.vue'
 import SearchList from './SearchList.vue'
 
 export default {

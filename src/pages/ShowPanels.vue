@@ -1,9 +1,5 @@
 <template>
-  <the-header
-    @activate-home="homeActivated"
-    @activate-search="searchActivated"
-    @activate-shell="shellActivated"
-  ></the-header>
+  <the-header v-model="selectedTab"></the-header>
   <section>
     <keep-alive>
       <component :is="selectedTab"></component>
@@ -15,7 +11,7 @@
 import TheHeader from '@/components/layout/TheHeader.vue'
 import HomePanel from '@/components/home/HomePanel.vue'
 import SearchPanel from '@/components/search/SearchPanel.vue'
-import ShellPanel from '@/components/shell/ShellPanel.vue'
+import ShelfPanel from '@/components/shelf/ShelfPanel.vue'
 
 export default {
   data() {
@@ -27,7 +23,7 @@ export default {
     TheHeader,
     HomePanel,
     SearchPanel,
-    ShellPanel,
+    ShelfPanel,
   },
   methods: {
     homeActivated() {
@@ -37,7 +33,7 @@ export default {
       this.selectedTab = 'search-panel'
     },
     shellActivated() {
-      this.selectedTab = 'shell-panel'
+      this.selectedTab = 'shelf-panel'
     },
   },
 }

@@ -5,17 +5,22 @@
       <div class="button">Sign Out</div>
     </div>
     <section>
-      <div class="container panel-holder">
-        <button class="panel" @click="$emit('activate-home')">Home</button>
-        <button class="panel" @click="$emit('activate-search')">Search</button>
-        <button class="panel" @click="$emit('activate-shell')">My shell</button>
+      <div :value="modelValue" class="container panel-holder">
+        <button class="panel" @click="updateValue('home-panel')">Home</button>
+        <button class="panel" @click="updateValue('search-panel')">Search</button>
+        <button class="panel" @click="updateValue('shelf-panel')">My shelf</button>
       </div>
     </section>
   </header>
 </template>
 <script>
 export default {
-  emits: ['activate-home', 'activate-search', 'activate-shell'],
+  props: ['modelValue'],
+  methods: {
+    updateValue(value) {
+      this.$emit('update:modelValue', value)
+    },
+  },
 }
 </script>
 
